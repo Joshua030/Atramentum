@@ -12,3 +12,7 @@ export interface Action {
   type: string;
   payload?: string;
 }
+
+export interface ProcessEnv {
+  [key: string]: string | undefined
+}

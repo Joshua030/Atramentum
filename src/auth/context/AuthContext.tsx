@@ -4,7 +4,7 @@ import {Action, AuthState} from "../../../typings"
 
 export const initialState: AuthState = {
   isAuthenticated:localStorage.getItem('user')? true : false,
-  user: null || localStorage.getItem('user'),
+  user: JSON.parse(localStorage.getItem('user') ?? 'null'),
 };
 
 interface AuthContextType {

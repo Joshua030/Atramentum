@@ -1,16 +1,15 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { MarvelPage } from "../pages/MarvelPage";
+import { Home } from "../pages/Home";
 import { NavBar } from "../pages/NavBar";
 
 
-export const HeroesRoutes = () => {
+export const ClientsRoutes = () => {
   return (
     <>
       <NavBar />
       <div className="container">
         <Routes>
-          <Route path="marvel" element={<MarvelPage />} />
-          <Route path="/" element={<Navigate to="/marvel" />} />
+          <Route path="/" element={<Home/>} />
         </Routes>
       </div>
     </>

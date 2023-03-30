@@ -13,7 +13,7 @@ interface LoginData {
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const {  dispatch } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(false);
 
@@ -47,6 +47,8 @@ const LoginPage: React.FC = () => {
       );
 
       const { token } = await response.json();
+      if (token === undefined) return;
+    
 
       //       const user = jwtDecode<User>(token);
       // console.log(user);
@@ -67,7 +69,9 @@ const LoginPage: React.FC = () => {
           alt="People cross the street"
         />
       </div>
-      <div className={`${styles.secondContainer} ${hovered ? styles.blur : ""}`}>
+      <div
+        className={`${styles.secondContainer} ${hovered ? styles.blur : ""}`}
+      >
         <img
           src="\static\people-walking-on-the-street.jpg"
           alt="People cross the street"
