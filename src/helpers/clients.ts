@@ -7,12 +7,13 @@ export const getListOfPhotos= async() => {
   });
 
   const photos = await unsplashApi.search.getPhotos({
-    query: "coffee shop",
+    query: "person",
     page: 1,
     perPage: 40,
     // color: "green",
     // orientation: "portrait",
   });
+ 
   const unsplashPhotos=  photos.response?.results || [];
-    return unsplashPhotos.map(({urls})=> urls["small"]);
+    return unsplashPhotos.map(({urls})=> urls["regular"]);
 }

@@ -9,7 +9,7 @@ interface Props {
     export const PublicRoute: React.FC<Props> = ({children}) => {
         const {state}=useContext(AuthContext)
         return (state.isAuthenticated)
-        ? <Navigate to="/marvel" />
+        ? <Navigate to="/" />
         : <>{children}</>
         
       }
