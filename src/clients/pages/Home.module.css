@@ -1,14 +1,16 @@
 
 .parentContainer {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   background-color: #faf5e5;
 }
 
 .cardsContainer{
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  column-gap: 4rem;
-  row-gap: 8rem;
+  /* column-gap: 4rem; */
+  /* row-gap: 8rem; */
+  padding: 3rem 8rem;
+  gap: 1.6rem;
 }

@@ -1,0 +1,54 @@
+/* height: 184px !important;
+    width: 100vw !important; */
+
+.mainContainer {
+  height: 18.4rem;
+  padding: 1rem 8rem;
+  /* max-width: 1440px; */
+  width: 100%;
+  background-color: #faf5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navInformationLeft a,
+.navInformationRight a {
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.2em;
+  letter-spacing: 0.03;
+  color: #201b19;
+}
+
+.navLogo {
+  width: 40%;
+  justify-content: center;
+  display: flex;
+}
+
+.navLogo img {
+  border-radius: 100%;
+  width: 15em;
+  height: 15em;
+}
+
+.navInformationLeft {
+  width: 30%;
+  display: flex;
+  justify-content: right;
+}
+
+.navInformationLeft a:nth-child(2) {
+  margin: 0 auto;
+}
+
+.navInformationRight {
+  display: flex;
+  width: 30%;
+}
+
+.navInformationRight a:first-child {
+  margin: 0 auto;
+}
