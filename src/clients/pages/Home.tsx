@@ -13,7 +13,7 @@ interface Customer {
 }
 
 export const Home = () => {
-  const { state } = useContext(AuthContext);
+  const { state,dispatch } = useContext(AuthContext);
   const [clientsData, setClientsData] = useState([
     {
       contactName: "",
@@ -42,9 +42,8 @@ export const Home = () => {
           options
         );
         const data = await response.json();
-        // console.log(data);
 
-        const result = data?.content.map((customer: Customer, idx: number) => {
+        const result =data?.content.map((customer: Customer, idx: number) => {
           return {
             contactName: customer.contactName,
             phone1: customer.phone1,
@@ -52,16 +51,16 @@ export const Home = () => {
             email: customer.email,
             imgUrl: photos.length > 0 ? photos[idx] : null,
           };
-        });
+        })
 
         setClientsData(result);
-        console.log(clientsData.length);
-        if(clientsData.length<1){
-          console.log('nodata');
-          
-        }
       } catch (error) {
+        dispatch({ type: "LOGOUT" });
+        window.localStorage.removeItem('user');
+        console.log("entre");
+        
         console.log({ error });
+        
       }
     };
 

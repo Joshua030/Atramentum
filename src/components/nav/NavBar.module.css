@@ -1,6 +1,8 @@
 /* height: 184px !important;
     width: 100vw !important; */
-
+.mainWrapper{
+  display: flex;
+}
 .mainContainer {
   height: 18.4rem;
   padding: 1rem 8rem;
@@ -29,9 +31,6 @@
   cursor: pointer;
 }
 
-
-
-
 .navLogo {
   width: 40%;
   justify-content: center;
@@ -42,6 +41,10 @@
   border-radius: 100%;
   width: 10em;
   height: 10em;
+}
+
+.navLogoMobile{
+  display: none;
 }
 
 .navInformationLeft {
@@ -100,7 +103,18 @@
   transform: scale(1.1);
 }
 
+/* Mobile */
 
+.btnMovileNav{
+border: none;
+background: none;
+cursor: pointer;
+display: none;
+}
+
+.btnMovileNav svg:nth-child(2){
+  display: none;
+}
 
 /* Queries */
 
@@ -109,12 +123,91 @@
   .mainContainer {
     padding: 1rem 2rem;
   }
+}
+
+@media (max-width: 34em) {
 
   .navInformationLeft, .navInformationRight {
-    width: 40%;
+    width: 100%;
   }
 
-  .navLogo {
-    width: 20%;
+  .navInformationLeft a, .navInformationRight a {
+  font-size: 3rem;
   }
+  
+  .navLogo img {
+    width: 8em;
+    height: 8em;
+  }
+  
+ 
+  
+  .btnMovileNav{
+    display: block;
+    z-index: 10000;
+    }
+  
+    .mainContainer{
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: 9999;
+      transform: translate(100%);
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 4rem;
+      justify-content: center;
+      transition: all 0.4s ease-in;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      
+    }
+  
+    .navOpen .mainContainer{
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+      transform: translate(0);
+    }
+
+    .navOpen .btnMovileNav svg:nth-child(2){
+      display: block;
+    }
+
+    .navOpen .btnMovileNav svg:nth-child(1){
+      display: none;
+    }
+    .mainWrapper{
+      justify-content: space-around;
+      align-items: center;
+      padding: 3rem 0;
+    }
+  
+    .navInformationLeft, .navInformationRight {
+     flex-direction: column;
+     align-items: center;
+     gap: 4rem;
+    }
+  
+    .navLogoDestok {
+      display: none;
+    }
+
+    .navLogoMobile{
+      display: block;
+    }
+
+    .usernameBtn{
+      font-size: 3rem;
+    }
+    .usernameBtn:focus {
+  
+      background-color: black; 
+      color: #fff;
+     
+    }
 }

@@ -1,4 +1,4 @@
-.galleryRapper{
+.galleryRapper {
   overflow: hidden;
 }
 
@@ -16,10 +16,10 @@
 
 @keyframes mainContainer {
   from {
-      transform: scale(1);
+    transform: scale(1);
   }
   to {
-      transform: scale(1.07);
+    transform: scale(1.07);
   }
 }
 
@@ -33,18 +33,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); 
-
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.headerText{
+.headerText {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.2em;
   color: #fff;
 }
 
-.headerContainer{
+.headerContainer {
   position: relative;
   display: flex;
   align-items: center;
@@ -54,9 +53,9 @@
   z-index: 1;
 }
 
-.informationContainer{
-  position:relative;
-  display:flex;
+.informationContainer {
+  position: relative;
+  display: flex;
   flex-direction: column;
   z-index: 1;
   height: 88%;
@@ -64,19 +63,20 @@
   padding: 2rem;
 }
 
-.emailContainer{
+.emailContainer {
   border-top: 2px solid #fff;
   padding-top: 0.5rem;
- 
 }
 
-.celphoneContainer, .emailContainer{
+.celphoneContainer,
+.emailContainer {
   display: flex;
   gap: 2rem;
   justify-content: end;
 }
 
-.celphoneText, .emailText{
+.celphoneText,
+.emailText {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1.2em;
@@ -84,9 +84,25 @@
   letter-spacing: 0.02em;
 }
 
-@media (max-width:59em){
-  .headerText{
+@media (max-width: 59em) {
+  .headerText {
     font-size: 2rem;
   }
 }
 
+@media (max-width: 34em) {
+  .headerContainer {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .emailContainer, .celphoneContainer {
+    flex-direction: column;
+    align-items: center;
+    gap:0.2em;
+  }
+
+  .informationContainer{
+    gap: 1rem;
+  }
+}

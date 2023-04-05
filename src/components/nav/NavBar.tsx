@@ -2,17 +2,22 @@ import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import {  MouseEvent, useContext, useState } from "react";
 import { AuthContext } from "../../auth/context/AuthContext";
+import { List,X} from "@phosphor-icons/react";
 import jwtDecode from "jwt-decode";
 
 export const NavBar = () => {
   const { state,dispatch } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  
+ 
   const user:{sub:string} = jwtDecode(state.user||'');
  
- 
-  
-  
-
   const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleOpenNav = ()=>  {
+    setIsOpen(!isOpen)
+  }
  
   const handleSignOut = (e: MouseEvent<HTMLAnchorElement>)=>{
     e.preventDefault();
@@ -26,12 +31,21 @@ export const NavBar = () => {
 
 
   return (
+    <div className={`${styles.mainWrapper} ${isOpen? styles.navOpen: ""}`}>
+         <div  className={`${styles.navLogo} ${styles.navLogoMobile}`}>
+        <Link to={"/"}>
+          <img
+            src="https://media.licdn.com/dms/image/C4E0BAQES6hbKLxPcyA/company-logo_200_200/0/1616519647641?e=1688601600&v=beta&t=vjQsBmWWUI3b_aLZS3QcUghZRtcK9aTJfmqCipyMh34"
+            alt="company logo"
+          />
+        </Link>
+      </div>
     <div className={styles.mainContainer}>
       <div className={styles.navInformationLeft}>
         <Link to={""}>Information</Link>
         <Link to={""}>Our story</Link>
       </div>
-      <div className={styles.navLogo}>
+      <div className={`${styles.navLogo} ${styles.navLogoDestok}`}>
         <Link to={"/"}>
           <img
             src="https://media.licdn.com/dms/image/C4E0BAQES6hbKLxPcyA/company-logo_200_200/0/1616519647641?e=1688601600&v=beta&t=vjQsBmWWUI3b_aLZS3QcUghZRtcK9aTJfmqCipyMh34"
@@ -71,6 +85,11 @@ export const NavBar = () => {
           </div>
         </div>
       </div>
+    </div>
+    <button onClick={handleOpenNav} className={styles.btnMovileNav}>
+      <List  size={`4.8rem`} className={styles.iconMovileNav}/>
+      <X size={`4.8rem`} />
+      </button>
     </div>
   );
 };

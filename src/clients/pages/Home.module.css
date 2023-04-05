@@ -21,3 +21,11 @@
     padding: 3rem 2rem;
   }
 }
+
+@media (max-width: 34em) {
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+}
