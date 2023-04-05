@@ -1,3 +1,7 @@
+.galleryRapper{
+  overflow: hidden;
+}
+
 .mainContainer {
   position: relative;
   /* width: 32.7rem; */
@@ -8,6 +12,19 @@
   background-position: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border: 4px solid #151414d6;
+}
+
+@keyframes mainContainer {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(1.07);
+  }
+}
+
+.mainContainer:hover {
+  animation: mainContainer 1s ease-in-out infinite alternate;
 }
 
 .overlay {
@@ -65,5 +82,11 @@
   line-height: 1.2em;
   color: #fff;
   letter-spacing: 0.02em;
+}
+
+@media (max-width:59em){
+  .headerText{
+    font-size: 2rem;
+  }
 }
 

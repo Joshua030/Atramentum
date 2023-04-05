@@ -19,8 +19,18 @@
   text-decoration: none;
   line-height: 1.2em;
   letter-spacing: 0.03;
-  color: #201b19;
+  color: #444;
+  transition: all 0.4s;
 }
+
+.navInformationLeft a:hover,
+.navInformationRight a:hover {
+  color: #222;
+  cursor: pointer;
+}
+
+
+
 
 .navLogo {
   width: 40%;
@@ -30,8 +40,8 @@
 
 .navLogo img {
   border-radius: 100%;
-  width: 15em;
-  height: 15em;
+  width: 10em;
+  height: 10em;
 }
 
 .navInformationLeft {
@@ -47,8 +57,64 @@
 .navInformationRight {
   display: flex;
   width: 30%;
+  align-items: center;
 }
 
 .navInformationRight a:first-child {
   margin: 0 auto;
+}
+
+.navDropdown {
+  position: absolute;
+  margin-left: auto;
+  margin-top: 0.6rem /* 8px */;
+  padding-top: 0.6rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  padding-right: 0.5rem;
+  padding-left: 4rem;
+  display: block;
+  border-bottom: 3px solid black;
+  transition:  all 0.2s ease-in-out;
+}
+
+.navDropdown:hover{
+  border-bottom: 3px solid red;
+}
+
+.usernameBtn {
+  padding: 1rem 1rem;
+  background-color: #222;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  transition: all 0.3s ease-in;
+}
+
+.usernameBtn:hover{
+  background-color: #fff;
+  outline: 1px solid #222;
+  color: #222;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+
+/* Queries */
+
+/* Bellow 944px  tablets */
+@media (max-width:59em){
+  .mainContainer {
+    padding: 1rem 2rem;
+  }
+
+  .navInformationLeft, .navInformationRight {
+    width: 40%;
+  }
+
+  .navLogo {
+    width: 20%;
+  }
 }

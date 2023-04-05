@@ -1,0 +1,57 @@
+.mainContainer{
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
+.firstContainer{
+  height: 40%;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstContainer p{
+  display: block;
+}
+.secondContainer{
+  background-color: black;
+  height: 60%;
+display: flex;
+/* justify-content: center; */
+align-items: center;
+padding: 0 8rem;
+}
+
+.createContainer{
+  width: 55%;
+  display: flex;
+justify-content: flex-end;
+}
+.createContainer p{
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.socialContainer{
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+@media (max-width:59em){
+  .firstContainer{
+    font-size: 1.4rem;
+  }
+
+  .secondContainer{
+  padding: 0 1rem;
+  }
+}

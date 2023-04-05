@@ -10,6 +10,8 @@ interface props {
 
 export const Card = ({ imgUrl, contactName, phone1, email }: props) => {
   return (
+    <div className={styles.galleryRapper}>
+
     <div
       className={styles.mainContainer}
       style={{
@@ -31,6 +33,7 @@ export const Card = ({ imgUrl, contactName, phone1, email }: props) => {
         <h3 className={styles.celphoneText}>{phone1}</h3>
         </div>
       </div>
+    </div>
     </div>
   );
 };
