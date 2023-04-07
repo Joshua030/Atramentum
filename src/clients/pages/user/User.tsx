@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../../auth/context/AuthContext";
-import { PersonSimpleThrow, Check, X,ArrowLeft } from "@phosphor-icons/react";
+import { PersonSimpleThrow, Check, X,ArrowLeft,Pencil  } from "@phosphor-icons/react";
 import styles from "./User.module.css";
 
 export const User = () => {
@@ -38,7 +38,6 @@ export const User = () => {
           options
         );
         const data = await response.json();
-        console.log(data);
         setuserImg(JSON.parse(localStorage.getItem("imgUrl") ?? "null"));
         setuserInformation(data);
       } catch (error) {
@@ -147,6 +146,12 @@ export const User = () => {
       </div>
       <Link to={'/'} className={styles.backArrow}>
       <ArrowLeft size={35}  />
+      </Link>
+      <Link to={`/user/edit/${userId}`} className={styles.editUserIcon}>
+        <div className={styles.editUserWrapper}>
+        <Pencil size={32} />
+        {/* <p>Edit</p> */}
+        </div>
       </Link>
     </div>
   );

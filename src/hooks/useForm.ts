@@ -1,17 +1,45 @@
 import { ChangeEvent, useState } from 'react';
 interface FormState {
-    [key: string]: any;
+    phone1: string;
+    email: string;
+    sendCsvDaily: boolean;
+    sendCsvWeekly: boolean;
+    observations: string;
+    canContactPhone: boolean;
+    contactName: string;
+    sendNewsletter: boolean;
   }
-export const useForm = ( initialForm = {} ) => {
+
   
-    const [ formState, setFormState ] = useState( initialForm );
+export const useForm = ( initialForm = {
+    email: "",
+    contactName: "",
+    phone1: "",
+    phone2: "",
+    observations: "",
+    canContactPhone: false,
+    canSendMail: false,
+    sendCsvDaily: false,
+    sendCsvWeekly: false,
+    sendNewsletter: false,
+  }   ) => {
+  
+    const [ formState, setFormState ] = useState<FormState>( initialForm );
 
     const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [ name ]: value
-        });
+        const { name, type, checked, value } = event.target;
+
+  if (type === "checkbox") {
+    setFormState({
+      ...formState,
+      [name]: checked,
+    });
+  } else {
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  }
     }
 
     const onResetForm = () => {

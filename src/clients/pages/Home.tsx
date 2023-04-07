@@ -42,7 +42,7 @@ export const Home = () => {
           options
         );
         const data = await response.json();
-console.log(data.content);
+// console.log(data.content);
 
         const result =data?.content.map((customer: Customer, idx: number) => {
           return {

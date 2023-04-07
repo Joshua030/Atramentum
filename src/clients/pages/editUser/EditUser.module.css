@@ -1,0 +1,211 @@
+.checkboxWrapper input[type="checkbox"] {
+  background-image: -webkit-linear-gradient(
+      hsla(0, 0%, 0%, 0.1),
+      hsla(0, 0%, 100%, 0.1)
+    ),
+    -webkit-linear-gradient(left, #f66 50%, #6cf 50%);
+  background-size: 100% 100%, 200% 100%;
+  background-position: 0 0, 15px 0;
+  border-radius: 25px;
+  box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, 0.5),
+    inset 0 0 10px hsla(0, 0%, 0%, 0.5), 0 0 0 1px hsla(0, 0%, 0%, 0.1),
+    0 -1px 2px 2px hsla(0, 0%, 0%, 0.25), 0 2px 2px 2px hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+  height: 25px;
+  padding-right: 25px;
+  width: 75px;
+  appearance: none;
+  transition: 0.25s;
+}
+.checkboxWrapper input[type="checkbox"]:after {
+  background-color: #eee;
+  background-image: -webkit-linear-gradient(
+    hsla(0, 0%, 100%, 0.1),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  border-radius: 25px;
+  box-shadow: inset 0 1px 1px 1px hsla(0, 0%, 100%, 1),
+    inset 0 -1px 1px 1px hsla(0, 0%, 0%, 0.25),
+    0 1px 3px 1px hsla(0, 0%, 0%, 0.5), 0 0 2px hsla(0, 0%, 0%, 0.25);
+  content: "";
+  display: block;
+  height: 25px;
+  width: 50px;
+}
+.checkboxWrapper input[type="checkbox"]:checked {
+  background-position: 0 0, 35px 0;
+  padding-left: 25px;
+  padding-right: 0;
+}
+
+.checkboxWrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+
+.checkboxFormWrapper{
+  display: grid;
+  grid-template-columns:15% 10%;
+  align-items: center;
+
+}
+
+.checkboxFormWrapper p{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+
+.checkboxWrapper input {
+  justify-self: flex-end;
+}
+
+.checkboxWrapper p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #999;
+}
+
+.checkboxesWrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #3c4145;
+  row-gap: 2rem;
+  column-gap: 4rem;
+  justify-content: center;
+}
+
+.firstContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #3c4145;
+  gap: 2rem;
+  padding: 7rem 7rem;
+  padding-bottom: 1rem;
+}
+
+.firstContainer h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.grassEffect {
+  background-color: #3c4145;
+  height: 100px;
+  background-image: url("/static/daytime-divider-5.png");
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: repeat;
+  transition: 0.8s;
+}
+
+.formContainer {
+  width: 100%;
+  padding: 9rem 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #e3dec0;
+}
+
+.formContainer input[type="text"],
+.formContainer input[type="email"] {
+  width: 100%;
+  max-width: 100%;
+  width: 100%;
+  border: 0;
+  padding: 0 10px;
+  background: #f8f8f8;
+  color: #666;
+  height: 4rem;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.formContainer h2 {
+  color: #3c4145;
+  font-size: 3rem;
+}
+
+.checkboxFormWrapper input[type="checkbox"] {
+  background-image: -webkit-linear-gradient(
+      hsla(0, 0%, 0%, 0.1),
+      hsla(0, 0%, 100%, 0.1)
+    ),
+    -webkit-linear-gradient(left, #f66 50%, #6cf 50%);
+  background-size: 100% 100%, 200% 100%;
+  background-position: 0 0, 15px 0;
+  border-radius: 25px;
+  box-shadow: inset 0 1px 4px hsla(0, 0%, 0%, 0.5),
+    inset 0 0 10px hsla(0, 0%, 0%, 0.5), 0 0 0 1px hsla(0, 0%, 0%, 0.1),
+    0 -1px 2px 2px hsla(0, 0%, 0%, 0.25), 0 2px 2px 2px hsla(0, 0%, 100%, 0.75);
+  cursor: pointer;
+  height: 25px;
+  padding-right: 25px;
+  width: 75px;
+  appearance: none;
+  transition: 0.25s;
+}
+.checkboxFormWrapper input[type="checkbox"]:after {
+  background-color: #eee;
+  background-image: -webkit-linear-gradient(
+    hsla(0, 0%, 100%, 0.1),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  border-radius: 25px;
+  box-shadow: inset 0 1px 1px 1px hsla(0, 0%, 100%, 1),
+    inset 0 -1px 1px 1px hsla(0, 0%, 0%, 0.25),
+    0 1px 3px 1px hsla(0, 0%, 0%, 0.5), 0 0 2px hsla(0, 0%, 0%, 0.25);
+  content: "";
+  display: block;
+  height: 25px;
+  width: 50px;
+}
+.checkboxFormWrapper input[type="checkbox"]:checked {
+  background-position: 0 0, 35px 0;
+  padding-left: 25px;
+  padding-right: 0;
+}
+
+.formContainer button{
+  background-color: black;
+    color: #fff;
+    border-radius: 0;
+    display: inline-block;
+    padding: 0 1rem;
+    vertical-align: middle;
+    font-size: 1.8rem;
+    line-height: 4rem;
+    text-align: center;
+    text-decoration: none;
+    width: 20%;
+    border: none;
+    width: 20%;
+    margin: 0 auto;
+}
+
+.formContainer button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  outline: 2px solid #222;
+  color: black;
+}
+
+@media (max-width: 34em) {
+  .checkboxesWrapper {
+    grid-template-columns: repeat(1, 1fr);
+   
+  }
+
+  .formContainer{
+padding: 9rem 3rem;
+  }
+
+  .checkboxFormWrapper{
+    grid-template-columns: 35% 10%;
+  }
+  }
+
