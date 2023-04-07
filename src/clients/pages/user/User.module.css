@@ -1,0 +1,172 @@
+.userInformationWrapper {
+  background-color: #fff;
+  width: 100%;
+  height: 60vh;
+  padding: 1rem;
+  position: relative;
+}
+
+.userCardInformation {
+  position: relative;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  background-color: #a49780;
+  border: 0.1rem solid #a49780;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.userCardInformation::after,
+.userCardInformation::before {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.userCardInformation::before {
+  top: 2rem;
+  left: 2rem;
+}
+
+.userCardInformation::after {
+  top: 2rem;
+  right: 2rem;
+}
+
+.bottonBorderLine {
+  position: absolute;
+  width: 65%;
+  height: 2px;
+  background-color: #fff;
+  top: 95%;
+  right: 10%;
+  display: none;
+}
+.userImage {
+  height: 100%;
+  width: 35%;
+}
+
+.userImage::after {
+  content: "";
+position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 100px solid black;
+  border-left: 100px solid transparent;
+  top: 0;
+  right: 0; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+.userImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.mainInformation, .secondaryInformation {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 50%;
+  padding: 2rem;
+  height: 100%;
+  gap: 2rem;
+ 
+}
+
+.ac{
+  align-items: flex-start;
+  padding-left: 5rem;
+  flex-basis: 40%;
+}
+
+.dataContainer {
+  display: flex;
+  font-size: 2rem;
+  gap: 1rem;
+  color: #333;
+  width: 100%;
+}
+
+.dataContainer2{
+  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: 10% 50% 40%;
+    font-size: 2rem;
+    gap: 1rem;
+    color: #333;
+    width: 100%;
+}
+
+.alignBase{
+  align-items: baseline;
+}
+
+.alignCenter{
+  align-items: center;
+  
+}
+
+.dataContainer h2{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.border {
+  height: 80%;
+  border-left: 1px solid #fff;
+  position: absolute;
+  right: 0;
+  top: 10%;
+}
+
+.backArrow{
+position: absolute;
+top:15%;
+right: 5%;
+color: black;
+}
+
+.backArrow:hover{
+ color: #fff;
+  transform: scale(1.1);
+}
+
+/*phone*/
+@media (max-width: 34em) {
+  .userCardInformation {
+    flex-direction: column;
+  }
+
+  .userInformationWrapper {
+height: 100%;
+padding: 0;
+margin-bottom: -4.7rem;
+  }
+
+  .userImage img {
+    width: 193%;
+}
+
+.backArrow{
+  position: absolute;
+  top:12%;
+  right: 0%;
+  left: 13%;
+  }
+
+  .mainInformation{
+    padding: 2rem 6rem;
+  }
+}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 import { User,EnvelopeSimple,Phone } from "@phosphor-icons/react";
 
@@ -6,11 +7,17 @@ interface props {
   contactName: string;
   phone1: string;
   email: string;
+  userId: number;
 }
 
-export const Card = ({ imgUrl, contactName, phone1, email }: props) => {
+export const Card = ({ imgUrl, contactName, phone1, email, userId }: props) => {
+
+  const handleImg =() =>{
+    localStorage.setItem("imgUrl", JSON.stringify(imgUrl));
+  }
+
   return (
-    <div className={styles.galleryRapper}>
+    <Link to={`/user/${userId}`} className={styles.galleryRapper} onClick={handleImg}>
 
     <div
       className={styles.mainContainer}
@@ -34,6 +41,6 @@ export const Card = ({ imgUrl, contactName, phone1, email }: props) => {
         </div>
       </div>
     </div>
-    </div>
+    </Link>
   );
 };

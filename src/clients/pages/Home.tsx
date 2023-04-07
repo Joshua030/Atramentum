@@ -42,6 +42,7 @@ export const Home = () => {
           options
         );
         const data = await response.json();
+console.log(data.content);
 
         const result =data?.content.map((customer: Customer, idx: number) => {
           return {
@@ -56,9 +57,7 @@ export const Home = () => {
         setClientsData(result);
       } catch (error) {
         dispatch({ type: "LOGOUT" });
-        window.localStorage.removeItem('user');
-        console.log("entre");
-        
+        window.localStorage.removeItem('user'); 
         console.log({ error });
         
       }
@@ -78,6 +77,7 @@ export const Home = () => {
               contactName={element.contactName}
               phone1={element.phone1}
               email={element.email}
+              userId={element.id}
             />
           );
         })}
