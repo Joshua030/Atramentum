@@ -107,8 +107,10 @@ export const EditUser = () => {
         Object.entries(formState)
           .filter(([key, value]) => checkboxes[key] === true)
       );
-      // console.log(filteredState);
-      
+
+      const dataPut ={...userInformation,...filteredState}
+   console.log(dataPut);
+   
       const options = {
         method: "PUT",
         headers: {
@@ -116,14 +118,14 @@ export const EditUser = () => {
           "Content-Type": "application/json",
           accept: "application/json",
         },
-        body: JSON.stringify(filteredState),
+        body: JSON.stringify(dataPut),
       };
       const response = await fetch(
         `https://erp-api-dev-app.azurewebsites.net/akralogic/erp/api/customers/${userId}`,
         options
       );
       const data = await response.json();
-      // console.log(data);
+      // console.log({data});
     } catch (error) {
       console.log(error);
     }
