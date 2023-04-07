@@ -11,6 +11,7 @@ interface CheckboxState {
 }
 
 interface FormValues {
+  phone2: string;
   phone1: string;
   email: string;
   sendCsvDaily: boolean;
@@ -23,6 +24,7 @@ interface FormValues {
 
 export const EditUser = () => {
   const initialFormValues: FormValues = {
+    phone2:"",
     phone1: "",
     email: "",
     sendCsvDaily: false,
@@ -51,6 +53,7 @@ export const EditUser = () => {
   });
 
   const {
+    phone2,
     phone1,
     email,
     sendCsvDaily,
@@ -133,6 +136,7 @@ export const EditUser = () => {
       );
       // const data = await response.json();
       setdataOk(response.ok)
+      onResetForm()
       // console.log({response});
     } catch (error) {
       console.log(error);
@@ -148,7 +152,8 @@ export const EditUser = () => {
       element === "canContactPhone" ||
       element === "sendCsvDaily" ||
       element === "sendCsvWeekly" ||
-      element === "sendNewsletter"
+      element === "sendNewsletter"||
+      element === "phone2"
     );
   });
 
@@ -199,6 +204,17 @@ export const EditUser = () => {
               value={phone1}
               onChange={onInputChange}
               placeholder="Phone 1"
+            />
+          </label>
+        )}
+        {checkboxes.phone2 && (
+          <label>
+            <input
+              type="text"
+              name="phone2"
+              value={phone2}
+              onChange={onInputChange}
+              placeholder="Phone 2"
             />
           </label>
         )}

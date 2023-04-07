@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 interface FormState {
+    phone2:string;
     phone1: string;
     email: string;
     sendCsvDaily: boolean;
