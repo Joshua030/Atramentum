@@ -58,7 +58,7 @@
 
 @media (max-width: 34em) {
   .mainContainer {
-    height: 28rem;
+    height:100%;
   }
   .firstContainer {
     padding: 1rem 2rem;
