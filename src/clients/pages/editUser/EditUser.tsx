@@ -1,8 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import styles from "./EditUser.module.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../../auth/context/AuthContext";
+import { ArrowLeft  } from "@phosphor-icons/react";
 import { useForm } from "../../../hooks/useForm";
+import { useNavigate } from "react-router-dom";
 
 interface CheckboxState {
   [key: string]: boolean;
@@ -30,8 +32,9 @@ export const EditUser = () => {
     contactName: "",
     sendNewsletter: false,
   };
-
+  const navigate = useNavigate();
   const [checkboxes, setCheckboxes] = useState<CheckboxState>({});
+  const [dataOk, setdataOk] = useState(false)
   const { userId } = useParams();
   const { state } = useContext(AuthContext);
   const [userInformation, setuserInformation] = useState({
@@ -98,6 +101,10 @@ export const EditUser = () => {
     // console.log(checkboxes);
   };
 
+  const handleGoBack =() => {
+    navigate(-1)
+  }
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -109,7 +116,7 @@ export const EditUser = () => {
       );
 
       const dataPut ={...userInformation,...filteredState}
-   console.log(dataPut);
+ 
    
       const options = {
         method: "PUT",
@@ -124,8 +131,9 @@ export const EditUser = () => {
         `https://erp-api-dev-app.azurewebsites.net/akralogic/erp/api/customers/${userId}`,
         options
       );
-      const data = await response.json();
-      // console.log({data});
+      // const data = await response.json();
+      setdataOk(response.ok)
+      // console.log({response});
     } catch (error) {
       console.log(error);
     }
@@ -261,7 +269,13 @@ export const EditUser = () => {
           </div>
         )}
         <button type="submit">Submit</button>
+        {dataOk &&
+        (<h2>Upload Successful!</h2>)
+}
       </form>
+      <button className={styles.backArrow} onClick={handleGoBack}>
+      <ArrowLeft   />
+      </button>
     </div>
   );
 };

@@ -104,6 +104,7 @@
 
 .formContainer {
   width: 100%;
+  position: relative;
   padding: 9rem 20rem;
   display: flex;
   flex-direction: column;
@@ -194,6 +195,24 @@
   color: black;
 }
 
+.backArrow{
+  position: absolute;
+  bottom:0%;
+  right: 10%;
+  color: black;
+  font-size: 6.5rem;
+  border: none;
+  background-color: #e3dec0;
+  }
+
+  .backArrow:hover{
+    color: red;
+    cursor: pointer;
+   }
+
+   .mainContainer{
+    position: relative;
+   }
 @media (max-width: 34em) {
   .checkboxesWrapper {
     grid-template-columns: repeat(1, 1fr);
